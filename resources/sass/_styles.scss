@@ -1,0 +1,90 @@
+body {
+    background-color: #fbfbfb;
+}
+
+@media (min-width: 991.98px) {
+    main {
+        padding-left: 240px;
+        padding-right: 15px;
+    }
+}
+
+/* Sidebar */
+.sidebar {
+    padding: 58px 0 0;
+    overflow: auto;
+    position: fixed;
+    top: 0;
+    max-height: 100vh;
+    max-width: 240px;
+    min-width: 20px;
+    font-size: $sidebar-font-size;
+    z-index: 1;
+}
+
+@media (max-width: 991.98px) {
+    .sidebar {
+        width: 50%;
+    }
+
+    main {
+        padding-left: 20px;
+        padding-right: 15px;
+    }
+}
+
+.sidebar .active {
+    color: #484cb2 !important;
+    border-color: red;
+    // border-radius: 5px;
+    // box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
+}
+
+.sidebar-sticky {
+    position: relative;
+    top: 0;
+    height: calc(100vh - 48px);
+    padding-top: 0.5rem;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.sidebar .accordion-item .accordion-button {
+    padding: 10px 16px !important;
+    font-size: $sidebar-font-size;
+}
+
+.sidebar .accordion-item:last-of-type .accordion-collapse {
+    border-bottom-right-radius: 0rem;
+    border-bottom-left-radius: 0rem;
+}
+
+.sidebar .accordion-button:after {
+    height: 0.7rem;
+    width:0.7rem;
+    background-size: 0.7rem;
+}
+
+/* width */
+.sidebar::-webkit-scrollbar {
+    width: 5px;
+}
+  
+/* Track */
+.sidebar::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+
+/* Handle */
+.sidebar::-webkit-scrollbar-thumb {
+    background: #888; 
+}
+
+/* Handle on hover */
+.sidebar::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
+
+.login_section::-webkit-input-placeholder { /* Microsoft Edge */
+    color: red;
+  }
