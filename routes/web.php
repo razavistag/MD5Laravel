@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,9 +23,11 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
         return view('dashboard');
     })->name('dashboard');
 
-    Route::get('/customer', function () {
-        return view('pages.customer');
-    })->name('pages.customer');
+    // Route::get('/customer', function () {
+    //     return view('pages.customer');
+    // })->name('pages.customer');
+    Route::resource('customer/', UserController::class);
+    Route::get('customer/datatable', [UserController::class, 'datatableIndex']);
 });
 
 require __DIR__.'/auth.php';

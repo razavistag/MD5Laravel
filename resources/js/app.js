@@ -14,3 +14,8 @@ import { Input } from 'mdb-ui-kit'; // module
 
 import $ from 'jquery';
 window.$ = $;
+
+
+import DataTable from 'datatables.net';
+window.DataTable = DataTable;
+DataTable(window, $);

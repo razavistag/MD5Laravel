@@ -15,7 +15,7 @@
             </a>
 
 
-            @for ($i = 0; $i < 40; $i++)
+            {{-- @for ($i = 0; $i < 40; $i++)
                 <a class="list-group-item list-group-item-action px-3 border-0 bg-light border-0"
                     id="ex-with-icons-tab-{{ $i }}" data-mdb-toggle="tab"
                     href="/dashboard"
@@ -23,7 +23,7 @@
                     <i class="fas fa-cogs fa-fw me-2"></i> 
                     <span>{{ $i + 1 }} - {{ strtoupper(bin2hex(random_bytes(5))) }} </span>
                 </a>
-            @endfor
+            @endfor --}}
 
         </div>
     </div>
