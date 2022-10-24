@@ -98,11 +98,13 @@ body {
 
 #sidebar-menu .list-group{
     padding: 42px 0 0;
+    min-height: 100vh;
+
 }
 
 //top navigation
 #main-navbar {
-    margin-left: $content-body-pull-left - 5;
+    margin-left: $content-body-pull-left ;
 }
 
 // login screen
