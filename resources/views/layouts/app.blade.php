@@ -8,6 +8,7 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
+    
     <!-- Scripts -->
     @vite([
         'resources/sass/app.scss',

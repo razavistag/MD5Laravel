@@ -21,10 +21,33 @@ class UserController extends Controller
     }
 
     public function datatableIndex(){
-        $users = User::select(['id','name','email','created_at','updated_at'])->get();
+        $draw = request()->draw;
+        $start = request()->start;
+        $rowperpage = request()->length;
+        $columnIndex_arr = request()->order;
+        $columnName_arr = request()->columns;
+        $order_arr = request()->order;
+        $search_arr = request()->search;
+        $columnIndex = $columnIndex_arr[0]['column'];
+        $columnName = $columnName_arr[$columnIndex]['data'];
+        $columnSortOrder = $order_arr[0]['dir'];
+        $searchValue = $search_arr['value'];
+
+        $records = User::query();
+        $totalRecords = $records->count();
+        $records->orderBy($columnName, $columnSortOrder);
+        $records->where(function ($query) use($searchValue){
+            $query->where('name',  'like', '%' . $searchValue . '%');
+        });
+        $totalRecordswithFilter = $records->count();
+        $aaData =  $records->skip($start)->take($rowperpage)->get();
   
         return response()->json([
-            'data' => $users
+            "_recodesLength"        => $rowperpage,
+            "draw"                  => intval($draw),
+            "iTotalRecords"         => $totalRecords,
+            "iTotalDisplayRecords"  => $totalRecordswithFilter,
+            "aaData"                => $aaData,
         ]);
     }
 
