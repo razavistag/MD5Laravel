@@ -87,4 +87,10 @@ body {
 
 .login_section::-webkit-input-placeholder { /* Microsoft Edge */
     color: red;
-  }
+}
+
+#login_section .form-outline .form-control~.form-label{
+    color: gray !important;
+}
+
+

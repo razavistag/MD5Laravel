@@ -56,7 +56,11 @@
                         <a class="dropdown-item" href="#">Settings</a>
                     </li>
                     <li>
-                        <a class="dropdown-item" href="#">Logout</a>
+                        <!-- Authentication -->
+                        <form method="POST" action="{{ route('logout') }}">
+                            @csrf
+                            <a class="dropdown-item" href="#"  onclick="event.preventDefault(); this.closest('form').submit();">Logout</a>
+                        </form> 
                     </li>
                 </ul>
             </div>

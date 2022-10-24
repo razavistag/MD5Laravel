@@ -30,14 +30,14 @@
                 style="
                 background-image: url('https://wallpaperaccess.com/full/3632165.png');
                 ">
-                <div class="mask" style="background-color: rgba(0, 0, 0, 0.7);">
+                <div class="mask" style="background-color: rgba(0, 0, 0, 0.8);">
                     <div class="d-flex justify-content-center align-items-center h-100">
                         <div class="text-white ">
     
                             {{-- <section> --}}
                                 <div class="row">
                                     <div class="col-md-12 col-lg-12 col-xl-12 w-100">
-                                        <form method="POST" action="{{ route('login') }}">
+                                        <form method="POST" action="{{ route('login') }}" >
                                             @csrf
                                             <x-input-error :messages="$errors->get('email')" class="mt-2" />
                                            
@@ -47,18 +47,17 @@
                                                     type="email" 
                                                     id="email" 
                                                     class="form-control"
-                                                    autocomplete="off"
+                                                    autocomplete="disabled"
                                                     name="email" 
-                                                
                                                     style="
                                                     background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAAAXNSR0IArs4c6QAAAUBJREFUOBGVVE2ORUAQLvIS4gwzEysHkHgnkMiEc4zEJXCMNwtWTmDh3UGcYoaFhZUFCzFVnu4wIaiE+vvq6+6qTgthGH6O4/jA7x1OiCAIPwj7CoLgSXDxSjEVzAt9k01CBKdWfsFf/2WNuEwc2YqigKZpK9glAlVVwTTNbQJZlnlCkiTAZnF/mePB2biRdhwHdF2HJEmgaRrwPA+qqoI4jle5/8XkXzrCFoHg+/5ICdpm13UTho7Q9/0WnsfwiL/ouHwHrJgQR8WEwVG+oXpMPaDAkdzvd7AsC8qyhCiKJjiRnCKwbRsMw9hcQ5zv9maSBeu6hjRNYRgGFuKaCNwjkjzPoSiK1d1gDDecQobOBwswzabD/D3Np7AHOIrvNpHmPI+Kc2RZBm3bcp8wuwSIot7QQ0PznoR6wYSK0Xb/AGVLcWwc7Ng3AAAAAElFTkSuQmCC');
                                                     background-repeat: no-repeat;
                                                     background-attachment: scroll;
                                                     background-size: 16px 18px;
                                                     background-position: 98% 50%;
-                                                    width:500px
+                                                   
                                                     " />
-                                                <label class="form-label" for="email" style="margin-left: 0px">Email address</label>
+                                                <label class="form-label" for="email" style="margin-left: 0px color:white ">Email address</label>
                                                 <div class="form-notch">
                                                     <div class="form-notch-leading" style="width: 9px"></div>
                                                     <div class="form-notch-middle" style="width: 88.8px"></div>
@@ -73,8 +72,9 @@
                                                 id="password" 
                                                 name="password"
                                                 class="form-control"
-                                                    autocomplete="off"
-                                                    style="
+                                                autocomplete="off"
+                                                placeholder=""
+                                                style="
                                                     background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAAAXNSR0IArs4c6QAAAUBJREFUOBGVVE2ORUAQLvIS4gwzEysHkHgnkMiEc4zEJXCMNwtWTmDh3UGcYoaFhZUFCzFVnu4wIaiE+vvq6+6qTgthGH6O4/jA7x1OiCAIPwj7CoLgSXDxSjEVzAt9k01CBKdWfsFf/2WNuEwc2YqigKZpK9glAlVVwTTNbQJZlnlCkiTAZnF/mePB2biRdhwHdF2HJEmgaRrwPA+qqoI4jle5/8XkXzrCFoHg+/5ICdpm13UTho7Q9/0WnsfwiL/ouHwHrJgQR8WEwVG+oXpMPaDAkdzvd7AsC8qyhCiKJjiRnCKwbRsMw9hcQ5zv9maSBeu6hjRNYRgGFuKaCNwjkjzPoSiK1d1gDDecQobOBwswzabD/D3Np7AHOIrvNpHmPI+Kc2RZBm3bcp8wuwSIot7QQ0PznoR6wYSK0Xb/AGVLcWwc7Ng3AAAAAElFTkSuQmCC');
                                                     background-repeat: no-repeat;
                                                     background-attachment: scroll;
@@ -109,4 +109,10 @@
             </div>
             <!-- Background image -->
         </header>
+
+        <script type="module">
+            $(function() {
+                $('#login_section form').trigger("reset")
+            });
+        </script>
 </x-guest-layout>

@@ -1,15 +1,15 @@
 <nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse bg-dark border-1">
     <div class="position-sticky">
         <div class="list-group list-group-flush  mt-0">
-            <a href="#" class="list-group-item list-group-item-action px-3 border-0   bg-light border-0"
+            <a href="/dashboard" class="list-group-item list-group-item-action px-3 border-0   bg-light border-0"
                 aria-current="true">
                 <i class="fas fa-tachometer-alt fa-fw me-3"></i><span> DASHBOARD</span>
             </a>
-            <a href="#" class="list-group-item list-group-item-action px-3 border-0   bg-light border-0 active">
+            <a href="/dashboard" class="list-group-item list-group-item-action px-3 border-0   bg-light border-0 active">
                 <i class="fas fa-chart-area fa-fw me-3"></i><span> SETTINGS</span>
             </a>
 
-            <a href="#" class="list-group-item list-group-item-action px-3 border-0   bg-light border-0">
+            <a href="/dashboard" class="list-group-item list-group-item-action px-3 border-0   bg-light border-0">
                 <i class="fas fa-chart-area fa-fw me-3"></i><span> CUSTOMER ACCOUNT </span>
             </a>
 
@@ -92,8 +92,8 @@
             @for ($i = 0; $i < 40; $i++)
                 <a class="list-group-item list-group-item-action px-3 border-0   bg-light border-0"
                     id="ex-with-icons-tab-{{ $i }}" data-mdb-toggle="tab"
-                    href="#ex-with-icons-tabs-{{ $i }}"
-                    role="tab"aria-controls="ex-with-icons-tabs-{{ $i }}" aria-selected="false">
+                    href="/dashboard"
+                    role="tab" aria-controls="ex-with-icons-tabs-{{ $i }}" aria-selected="false">
                     <i class="fas fa-cogs fa-fw me-2"></i> {{ $i + 1 }} -
                     {{ strtoupper(bin2hex(random_bytes(5))) }} 
                 </a>
