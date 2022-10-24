@@ -25,7 +25,7 @@
 
     {{-- MAIN CONTENT --}}
     <main class="pt-4">
-        {{ $slot }}
+        {{ $slot }} 
     </main>
 </body>
 

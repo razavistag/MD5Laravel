@@ -2,18 +2,15 @@
     <!-- Container wrapper -->
     <div class="container-fluid">
         <!-- Toggle button -->
-        <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#sidebarMenu"
-            aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#sidebar-menu"
+            aria-controls="sidebar-menu" aria-expanded="false" aria-label="Toggle navigation">
             <i class="fas fa-bars"></i>
         </button>
 
         <!-- Brand -->
-    
-        <a class="navbar-brand" href="#">
-          <img src="https://getbootstrap.com/docs/5.0/assets/brand/bootstrap-logo.svg" alt="" width="30" height="24" class="d-inline-block align-text-top">
-          MDB-5 LARAVEL VITE
-        </a>
-
+       <div class="d-flex align-items-center brand" data-size="full" style="cursor: pointer">
+            <i class="fas fa-bars mx-3 text-white"></i>
+       </div>
 
         <!-- Right elements -->
         <div class="d-flex align-items-center">
@@ -67,4 +64,53 @@
         </div>
     </div>
     <!-- Container wrapper -->
+
+    <script type="module">
+        $(function() {
+            console.log('ready main-navbar')
+        });
+
+        $('.brand').click(function(){
+            var state = toogle_sidebar_widget($(this).data('size'))
+            $(this).data('size', state) 
+        })
+
+        function toogle_sidebar_widget(state){
+           if(window.innerWidth <= 991) {
+                toogle_widget(true)
+                return 'full';
+           }else{
+                if (state == 'full') {
+                    toogle_widget(false)
+                    return 'min';
+                } else {
+                    toogle_widget(true)
+                    return 'full';
+                }
+           }
+        }
+
+        function toogle_widget(state){
+            if(state){
+                $("#sidebar-menu a span").show();
+                $("#sidebar-menu button span").show();
+                $("#sidebar-menu sidebar-header span").show();
+
+                $('.sidebar').css({ 'min-width': '240px', });
+                $('#sidebar-menu .sidebar-header').css({ 'padding-left':'20px'});
+                $('#main-navbar').css({ 'margin-left': '235px',  });
+                $('main').css({'padding-left': '250px','transition-duration': '0.2s'});
+            }else{
+                $("#sidebar-menu a span").hide();
+                $("#sidebar-menu button span").hide();
+                $("#sidebar-menu sidebar-header span").hide();
+
+                $('.sidebar').css({ 'min-width': '75px',  });
+                $('#sidebar-menu .sidebar-header').css({ 'padding-left':'25px'});
+                $('#main-navbar').css({ 'margin-left': '80px'});
+                $('main').css({ 'padding-left': '90px','transition-duration': '0.2s' });
+            }
+        }
+        
+    </script>
 </nav>

@@ -4,20 +4,20 @@ body {
 
 @media (min-width: 991.98px) {
     main {
-        padding-left: 240px;
+        padding-left: $content-body-pull-left + 9;
         padding-right: 15px;
     }
 }
 
 /* Sidebar */
 .sidebar {
-    padding: 58px 0 0;
+    // padding: 108px 0 0;
     overflow: auto;
     position: fixed;
     top: 0;
     max-height: 100vh;
-    max-width: 240px;
-    min-width: 20px;
+    // max-width: $content-body-pull-left;
+    min-width: $content-body-pull-left;
     font-size: $sidebar-font-size;
     z-index: 1;
 }
@@ -25,8 +25,14 @@ body {
 @media (max-width: 991.98px) {
     .sidebar {
         width: 50%;
+        min-width: 200px;
     }
-
+    #main-navbar{
+        margin-left: 0 !important;
+    }
+    #main-navbar .brand{
+        display: none !important;
+    }
     main {
         padding-left: 20px;
         padding-right: 15px;
@@ -36,15 +42,13 @@ body {
 .sidebar .active {
     color: #484cb2 !important;
     border-color: red;
-    // border-radius: 5px;
-    // box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
 }
 
 .sidebar-sticky {
     position: relative;
     top: 0;
     height: calc(100vh - 48px);
-    padding-top: 0.5rem;
+    padding-top: .5rem;
     overflow-x: hidden;
     overflow-y: auto;
 }
@@ -65,26 +69,43 @@ body {
     background-size: 0.7rem;
 }
 
-/* width */
 .sidebar::-webkit-scrollbar {
     width: 5px;
 }
   
-/* Track */
 .sidebar::-webkit-scrollbar-track {
     background: #f1f1f1; 
 }
 
-/* Handle */
 .sidebar::-webkit-scrollbar-thumb {
     background: #888; 
 }
 
-/* Handle on hover */
 .sidebar::-webkit-scrollbar-thumb:hover {
     background: #555; 
 }
 
+#sidebar-menu .sidebar-header{
+    background-color: rgb(69, 68, 68);
+    padding-top: 5px;
+    max-height: 42.59px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+}
+
+#sidebar-menu .list-group{
+    padding: 42px 0 0;
+}
+
+//top navigation
+#main-navbar {
+    margin-left: $content-body-pull-left - 5;
+}
+
+// login screen
 .login_section::-webkit-input-placeholder { /* Microsoft Edge */
     color: red;
 }
